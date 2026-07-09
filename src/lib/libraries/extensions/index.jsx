@@ -16,6 +16,9 @@ import text2speechInsetIconURL from './text2speech/text2speech-small.svg';
 import translateIconURL from './translate/translate.png';
 import translateInsetIconURL from './translate/translate-small.png';
 
+import kidsboardIconURL from './kidsboard/kidsboard.svg';
+import kidsboardInsetIconURL from './kidsboard/kidsboard-small.svg';
+
 import makeymakeyIconURL from './makeymakey/makeymakey.png';
 import makeymakeyInsetIconURL from './makeymakey/makeymakey-small.svg';
 
@@ -150,6 +153,16 @@ export default [
         ),
         featured: true,
         internetConnectionRequired: true
+    },
+    {
+        name: 'KidsBoard',
+        extensionId: 'kidsboard',
+        collaborator: 'ネコマ製作所',
+        iconURL: kidsboardIconURL,
+        insetIconURL: kidsboardInsetIconURL,
+        description: 'KidsBoardをBluetoothでつないで、LED・ボタン・スピーカー・センサーをうごかそう。',
+        featured: true,
+        bluetoothRequired: true
     },
     {
         name: 'Makey Makey',

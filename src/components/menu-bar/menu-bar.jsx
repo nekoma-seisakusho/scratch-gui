@@ -86,7 +86,7 @@ import fileIcon from './icon--file.svg';
 import editIcon from './icon--edit.svg';
 import debugIcon from '../debug-modal/icons/icon--debug.svg';
 
-import scratchLogo from './scratch-logo.svg';
+import kidsboardLogo from './kidsboard-logo.svg';
 import ninetiesLogo from './nineties_logo.svg';
 import catLogo from './cat_logo.svg';
 import prehistoricLogo from './prehistoric-logo.svg';
@@ -433,7 +433,7 @@ class MenuBar extends React.Component {
                         <div className={classNames(styles.menuBarItem)}>
                             <img
                                 id="logo_img"
-                                alt="Scratch"
+                                alt="KidsBoard"
                                 className={classNames(styles.scratchLogo, {
                                     [styles.clickable]: typeof this.props.onClickLogo !== 'undefined'
                                 })}
@@ -948,7 +948,7 @@ MenuBar.propTypes = {
 };
 
 MenuBar.defaultProps = {
-    logo: scratchLogo,
+    logo: kidsboardLogo,
     onShare: () => {}
 };
 
