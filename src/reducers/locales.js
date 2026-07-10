@@ -3,6 +3,18 @@ import {addLocaleData} from 'react-intl';
 import {localeData, isRtl} from 'scratch-l10n';
 import editorMessages from 'scratch-l10n/locales/editor-msgs';
 
+// KidsBoard: 翻訳済みメッセージの一部を上書き (デフォルトのプロジェクト名)
+const kidsboardMessageOverrides = {
+    en: {'gui.gui.defaultProjectTitle': 'KidsBoard Project'},
+    ja: {'gui.gui.defaultProjectTitle': 'KidsBoardのプロジェクト'},
+    'ja-Hira': {'gui.gui.defaultProjectTitle': 'キッズボードのプロジェクト'}
+};
+Object.keys(kidsboardMessageOverrides).forEach(locale => {
+    if (editorMessages[locale]) {
+        Object.assign(editorMessages[locale], kidsboardMessageOverrides[locale]);
+    }
+});
+
 addLocaleData(localeData);
 
 const UPDATE_LOCALES = 'scratch-gui/locales/UPDATE_LOCALES';
