@@ -105,8 +105,10 @@ class LibraryItem extends React.PureComponent {
     }
     render () {
         const iconMd5 = this.curIconMd5();
+        // KidsBoard: サムネイルも自サイトに同梱したアセットを参照する
+        // (Scratch公式CDNに繋がらない環境でもライブラリ一覧が表示できるように)。
         const iconURL = iconMd5 ?
-            `https://cdn.assets.scratch.mit.edu/internalapi/asset/${iconMd5}/get/` :
+            `static/library-assets/${iconMd5}` :
             this.props.iconRawURL;
         return (
             <LibraryItemComponent

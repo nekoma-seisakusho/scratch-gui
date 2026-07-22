@@ -24,5 +24,9 @@ npm-*
 # Downloaded during "npm install"
 /static/microbit
 
+# KidsBoard: ライブラリ素材(Scratch財団のアセット、計約57MB)は自サイト同梱用に
+# tools/download-library-assets.js でDLする。ソースではないのでリポジトリには含めない。
+/static/library-assets
+
 # for act
 .secrets

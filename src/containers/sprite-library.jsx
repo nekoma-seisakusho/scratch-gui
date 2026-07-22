@@ -30,7 +30,21 @@ class SpriteLibrary extends React.PureComponent {
         randomizeSpritePosition(item);
         this.props.vm.addSprite(JSON.stringify(item)).then(() => {
             this.props.onActivateBlocksTab();
-        });
+        })
+            .catch(error => {
+                // addSprite がコスチューム/音の読み込みに失敗すると
+                // これまでは無言で握りつぶされ「選択しても何も起きない」状態だった。
+                // 失敗理由を必ず表示して原因を分かるようにする。
+                // eslint-disable-next-line no-console
+                console.error('KidsBoard: スプライトを追加できませんでした', error);
+                if (typeof window !== 'undefined') {
+                    window.alert(
+                        `スプライト「${item.name}」を追加できませんでした。\n` +
+                        'ネットワーク接続を確認してください。\n' +
+                        `詳細: ${error && error.message ? error.message : error}`
+                    );
+                }
+            });
     }
     render () {
         return (

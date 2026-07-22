@@ -125,7 +125,7 @@ const buildConfig = baseConfig.clone()
         ...commonHtmlWebpackPluginOptions,
         chunks: ['gui'],
         template: 'src/playground/index.ejs',
-        title: 'KidsBoard ブロックプログラミング (Scratch 3.0ベースの非公式ビルド)'
+        title: 'KidsBoard ブロックプログラミング'
     }))
     .addPlugin(new HtmlWebpackPlugin({
         ...commonHtmlWebpackPluginOptions,
